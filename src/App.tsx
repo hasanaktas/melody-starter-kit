@@ -9,8 +9,6 @@ type FormValues = {
   address: string;
 };
 
-type a = keyof FormValues;
-
 const initialValues: FormValues = { name: "", surname: "", address: "" };
 
 const App = () => {
@@ -22,8 +20,6 @@ const App = () => {
   );
 
   const handleValidate = React.useCallback((values: FormValues) => {
-    const pattern = /^^[A-Z].*$/;
-
     const errors: FormikErrors<FormValues> = {};
 
     for (const [key, value] of Object.entries(values)) {
